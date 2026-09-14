@@ -1,0 +1,299 @@
+@import './variables.css';
+
+/* ===================================================
+   Reset & Base Styles
+=================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===================================================
+   Typography Hierarchy
+=================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  color: var(--color-text-body);
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* ===================================================
+   Accessibility Focus States
+=================================================== */
+:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 3px;
+}
+
+/* ===================================================
+   Layout Containers
+=================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  border: 1px solid rgba(217, 72, 15, 0.2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.section-tag.secondary {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary);
+  border-color: rgba(27, 67, 50, 0.2);
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   Button Primitives
+=================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  line-height: 1.2;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(217, 72, 15, 0.35);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(27, 67, 50, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.btn-ghost:hover {
+  background: rgba(43, 24, 16, 0.05);
+  color: var(--color-primary);
+}
+
+.btn-lg {
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+/* ===================================================
+   Card Primitives
+=================================================== */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(217, 72, 15, 0.25);
+}
+
+/* ===================================================
+   Subtle Mexican Motif Pattern Decorator
+=================================================== */
+.mexican-pattern-subtle {
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ===================================================
+   Custom Scrollbar
+=================================================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D5C5B5;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}

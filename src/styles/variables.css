@@ -1,0 +1,67 @@
+/* ===================================================
+   EL Tacos and Burritos — Design System & Tokens
+   Mexican-inspired Warm + Premium + Modern Palette
+=================================================== */
+
+:root {
+  /* Color Palette */
+  --color-bg: #FDF8EE;             /* Warm cream main background */
+  --color-bg-alt: #F7EFE1;         /* Slightly deeper cream for alternate sections */
+  --color-surface: #FFFFFF;        /* Pure white for card elevation */
+  --color-surface-warm: #FAF4E8;   /* Warm tinted surface for subtle contrast */
+  
+  /* Brand Accents */
+  --color-primary: #D9480F;        /* Dominant accent: Mexican warm chili red-orange */
+  --color-primary-hover: #BF3B07;  /* Deepened warm chili hover */
+  --color-primary-light: #FFE8D6;  /* Soft chili peach tint */
+  --color-primary-subtle: #FFF4EC; /* Very light background glow */
+  
+  --color-secondary: #1B4332;      /* Deep agave/forest green supporting color */
+  --color-secondary-hover: #133325;/* Darker green hover */
+  --color-secondary-light: #E8F3EE;/* Muted mint/agave tint */
+  
+  --color-accent-gold: #D4A373;    /* Warm toasted tortilla gold */
+  --color-accent-gold-light: #FBF4E9;
+  
+  /* Typography Colors */
+  --color-text: #2B1810;           /* Roasted dark espresso text */
+  --color-text-body: #4A352B;      /* Warm cocoa body text */
+  --color-text-muted: #7D6B61;     /* Soft warm mocha muted text */
+  --color-text-light: #FAF3E8;     /* Inverted text on dark backgrounds */
+  
+  /* Borders & Dividers */
+  --color-border: #EADBCE;         /* Warm sand border */
+  --color-border-subtle: #F3EBE0;  /* Very soft divider */
+  --color-border-focus: #D9480F;   /* Focus outline */
+
+  /* Shadows (Warm tinted) */
+  --shadow-xs: 0 1px 2px rgba(43, 24, 16, 0.04);
+  --shadow-sm: 0 2px 6px rgba(43, 24, 16, 0.06);
+  --shadow-md: 0 6px 16px rgba(43, 24, 16, 0.08);
+  --shadow-lg: 0 12px 32px rgba(43, 24, 16, 0.11);
+  --shadow-xl: 0 20px 48px rgba(43, 24, 16, 0.14);
+  --shadow-primary: 0 8px 24px rgba(217, 72, 15, 0.28);
+  --shadow-secondary: 0 8px 24px rgba(27, 67, 50, 0.22);
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-family-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Layout Spacing */
+  --container-max-width: 1240px;
+  --container-padding: 1.5rem;
+  --header-height: 80px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
