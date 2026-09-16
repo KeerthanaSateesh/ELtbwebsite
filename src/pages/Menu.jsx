@@ -1,39 +1,46 @@
 import React from 'react';
-import MenuHero from '../components/menu/MenuHero';
-import MenuCategoryNav from '../components/menu/MenuCategoryNav';
-import BaseSection from '../components/menu/BaseSection';
-import MainSection from '../components/menu/MainSection';
-import ToppingsSection from '../components/menu/ToppingsSection';
-import AddOnsSection from '../components/menu/AddOnsSection';
-import ProOptionsSection from '../components/menu/ProOptionsSection';
+import { useSearchParams } from 'react-router-dom';
+import MenuTypeSelector from '../components/menu/MenuTypeSelector';
+import TacosBurritosMenu from '../components/menu/TacosBurritosMenu';
+import TiffinHero from '../components/menu/TiffinHero';
+import TiffinAvailability from '../components/menu/TiffinAvailability';
+import TiffinMenu from '../components/menu/TiffinMenu';
 import './Menu.css';
 
 export default function Menu() {
+  const [searchParams] = useSearchParams();
+  const currentType = searchParams.get('type') || 'tacos-burritos';
+
   return (
     <div className="menu-page">
-      {/* Menu Introduction & Visual Hero */}
-      <MenuHero />
+      {/* Dual Menu Selector Switcher (Tacos & Burritos vs Tiffins) */}
+      <MenuTypeSelector />
 
-      {/* Sticky Category Quick Jump Navigation */}
-      <MenuCategoryNav />
+      {currentType === 'tiffins' ? (
+        /* ===================================================
+           TIFFIN / BREAKFAST EXPERIENCE
+           Completely isolated South Indian menu & authentic images.
+           Zero Mexican content or Mexican images rendered.
+           =================================================== */
+        <div className="tiffin-experience-wrapper">
+          {/* Dedicated South Indian Tiffin Hero Section */}
+          <TiffinHero />
 
-      {/* Main Menu Body Container */}
-      <div className="container">
-        {/* Step 1: Choose Your Base */}
-        <BaseSection />
+          {/* Real-Time Operating Hours & Availability Notice */}
+          <TiffinAvailability />
 
-        {/* Step 2: Choose Your Main (Non-Veg & Veg) */}
-        <MainSection />
-
-        {/* Step 3: Choose Your Toppings */}
-        <ToppingsSection />
-
-        {/* Step 4: Choose Your Add-Ons */}
-        <AddOnsSection />
-
-        {/* Highlight Section: Our Pro Options */}
-        <ProOptionsSection />
-      </div>
+          {/* Tiffin Food Items Grid & Category Filtering */}
+          <div className="container">
+            <TiffinMenu />
+          </div>
+        </div>
+      ) : (
+        /* ===================================================
+           TACOS & BURRITOS EXPERIENCE (100% PRESERVED)
+           Mexican Hero + Category Nav + Bases + Mains + Pro Options
+           =================================================== */
+        <TacosBurritosMenu />
+      )}
     </div>
   );
 }

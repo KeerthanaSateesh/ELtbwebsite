@@ -939,3 +939,508 @@
     align-items: center;
   }
 }
+
+/* ---------------------------------------------------
+   Menu Type Switcher Tabs (Top of Menu Page)
+--------------------------------------------------- */
+.menu-type-selector-wrapper {
+  background-color: var(--color-surface);
+  border-bottom: 2px solid var(--color-border);
+  padding: 1rem 0;
+}
+
+.menu-type-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.menu-type-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.menu-type-tab:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-type-tab.active {
+  background-color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-type-tab .tab-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.menu-type-tab .tab-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-type-tab .tab-title {
+  font-family: var(--font-family-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.menu-type-tab .tab-subtitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.menu-type-tab .tab-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-top: 0.15rem;
+  width: fit-content;
+}
+
+.menu-type-tab .tab-badge.open {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.menu-type-tab .tab-badge.closed {
+  background-color: #FFF8E1;
+  color: #B78103;
+}
+
+/* ---------------------------------------------------
+   Tiffin Availability Banner
+--------------------------------------------------- */
+.tiffin-availability-banner {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-normal);
+}
+
+.tiffin-availability-banner.open {
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  border-color: #BBF7D0;
+}
+
+.tiffin-availability-banner.closed {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  border-color: #FDE68A;
+}
+
+.tiffin-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tiffin-banner-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.25rem;
+  flex-shrink: 0;
+}
+
+.icon-available {
+  color: #16A34A;
+}
+
+.icon-unavailable {
+  color: #D97706;
+}
+
+.tiffin-banner-content {
+  flex: 1;
+  min-width: 260px;
+}
+
+.tiffin-banner-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.status-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
+.status-indicator-dot.open {
+  background-color: #16A34A;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+}
+
+.status-indicator-dot.closed {
+  background-color: #D97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25);
+}
+
+.tiffin-banner-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.tiffin-banner-sub {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tiffin-banner-hours-card {
+  display: flex;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+}
+
+.hours-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.hours-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.hours-time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ---------------------------------------------------
+   Tiffin Menu Content
+--------------------------------------------------- */
+.tiffin-menu-container {
+  padding: 3rem 0 5rem 0;
+}
+
+.tiffin-categories-bar {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.tiffin-categories-track {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0.25rem 0;
+}
+
+.tiffin-categories-track::-webkit-scrollbar {
+  display: none;
+}
+
+.tiffin-cat-btn {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-body);
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.tiffin-cat-btn:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.tiffin-cat-btn.active {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-secondary);
+}
+
+/* Tiffin Hero Section */
+.tiffin-hero-section {
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface-warm) 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tiffin-tag {
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary);
+}
+
+.tiffin-pill {
+  border-color: rgba(46, 125, 50, 0.25);
+  color: var(--color-secondary);
+  background-color: var(--color-secondary-light);
+}
+
+.tiffin-floating-badge {
+  border-left: 3px solid var(--color-secondary);
+}
+
+.tiffin-section-header {
+  margin-bottom: 3rem;
+}
+
+.tiffin-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.tiffin-item-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.tiffin-item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Visual Container (modular for future 3D replacement) */
+.tiffin-card-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background-color: var(--color-surface-warm);
+}
+
+.tiffin-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.tiffin-item-card:hover .tiffin-card-img {
+  transform: scale(1.05);
+}
+
+.tiffin-visual-badges {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  z-index: 2;
+}
+
+.tiffin-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.02em;
+}
+
+.tiffin-badge.badge-signature {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+}
+
+.tiffin-badge.badge-popular {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.tiffin-card-body {
+  padding: 1.35rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tiffin-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.tiffin-name-line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.tiffin-veg-indicator {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #2E7D32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.tiffin-veg-dot {
+  font-size: 0.55rem;
+  color: #2E7D32;
+}
+
+.tiffin-item-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.tiffin-price-badge {
+  display: flex;
+  align-items: baseline;
+  color: var(--color-primary);
+  font-family: var(--font-family-display);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.tiffin-currency {
+  font-size: 0.85rem;
+  margin-right: 1px;
+}
+
+.tiffin-amount {
+  font-size: 1.3rem;
+}
+
+.tiffin-item-desc {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.tiffin-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--color-border-subtle);
+  gap: 0.5rem;
+}
+
+.tiffin-category-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-warm);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.tiffin-order-btn {
+  background-color: var(--color-surface-warm);
+  color: var(--color-secondary);
+  border: 1.5px solid var(--color-secondary);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tiffin-order-btn:hover {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-secondary);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 991px) {
+  .tiffin-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .tiffin-items-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-type-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-type-tab {
+    width: 100%;
+  }
+
+  .tiffin-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .tiffin-banner-hours-card {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tiffin-categories-bar {
+    justify-content: flex-start;
+  }
+
+  .tiffin-categories-track {
+    padding-left: 0.25rem;
+  }
+}
+

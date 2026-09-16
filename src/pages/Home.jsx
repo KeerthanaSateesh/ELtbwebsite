@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { HiArrowRight, HiOutlineSparkles, HiOutlineFire, HiOutlineHeart } from 'react-icons/hi';
 import Button from '../components/common/Button';
 
+import HomeMenuTypeSelector from '../components/home/MenuTypeSelector';
+import MenuTypeToggle from '../components/home/MenuTypeToggle';
+
 // Local project images
 import heroImage from '../assets/images/hero/etb_commercial_hero.jpg';
 import birriaTacosImage from '../assets/images/food/etb_birria_tacos.jpg';
@@ -15,6 +18,9 @@ import './Home.css';
 export default function Home() {
   return (
     <div className="home-page">
+      {/* Top Menu Selection Toggle */}
+      <MenuTypeToggle />
+
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container hero-container">
@@ -75,6 +81,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* What Are You Craving Dual Menu Selector */}
+      <HomeMenuTypeSelector />
 
       {/* Featured Pro Options Section */}
       <section className="section pro-showcase-section">
