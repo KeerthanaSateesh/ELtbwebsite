@@ -1,189 +1,182 @@
 /**
- * EL Tacos and Burritos — Tiffins / Traditional South Indian Breakfast Menu Data
- * Distinct menu for traditional breakfast & evening tiffins.
+ * EL Tacos and Burritos — Mexican Breakfast Menu Data
+ * Distinct menu for Mexican-style morning & evening breakfast specialties.
  * Operating Windows: 7:00 AM - 11:00 AM & 7:00 PM - 11:00 PM
- * Completely separate from Mexican menu items and images.
+ * Completely separate from the main lunch/dinner Mexican menu.
  */
 
-// Dedicated authentic Tiffin food image assets
-import pooriImage from '../assets/images/food/poori.jpg';
-import dosaImage from '../assets/images/food/dosa.jpg';
-import idlyImage from '../assets/images/food/idly.jpg';
-import vadaImage from '../assets/images/food/vada.jpg';
-import pongalImage from '../assets/images/food/pongal.jpg';
-import upmaImage from '../assets/images/food/upma.jpg';
+// Dedicated authentic Mexican breakfast food image assets
+import breakfastTacosImg from '../assets/images/food/mex_breakfast_tacos.jpg';
+import breakfastBurritoImg from '../assets/images/food/mex_breakfast_burrito.jpg';
+import breakfastBowlImg from '../assets/images/food/mex_breakfast_bowl.jpg';
+import huevosRancherosImg from '../assets/images/food/huevos_rancheros.jpg';
+import chilaquilesImg from '../assets/images/food/chilaquiles_verdes.jpg';
+import breakfastQuesadillaImg from '../assets/images/food/breakfast_quesadilla.jpg';
 
 export const TIFFIN_CATEGORIES = [
-  { id: "all", label: "All Tiffins" },
-  { id: "idly", label: "Idly" },
-  { id: "dosa", label: "Dosa" },
-  { id: "poori", label: "Poori" },
-  { id: "vada", label: "Vada" },
-  { id: "pongal", label: "Pongal" },
-  { id: "upma", label: "Upma" },
-  { id: "combos", label: "Combos" }
+  { id: "all", label: "All Breakfast" },
+  { id: "breakfast-tacos", label: "Breakfast Tacos" },
+  { id: "breakfast-burritos", label: "Breakfast Burritos" },
+  { id: "breakfast-bowls", label: "Breakfast Bowls" },
+  { id: "huevos", label: "Huevos & Eggs" },
+  { id: "chilaquiles", label: "Chilaquiles" },
+  { id: "quesadillas", label: "Breakfast Quesadillas" },
+  { id: "combos", label: "Breakfast Combos" }
 ];
 
 export const TIFFIN_ITEMS = [
-  // Idly
+  // Breakfast Tacos
   {
-    id: "tiffin-plain-idly",
-    name: "Plain Idly (2 pcs)",
+    id: "bfast-chorizo-egg-tacos",
+    name: "Chorizo & Egg Breakfast Tacos (2 pcs)",
     menuType: "tiffins",
-    category: "idly",
-    price: 50,
-    veg: true,
-    image: idlyImage,
-    description: "Steamed fluffy fermented rice & lentil cakes served with coconut chutney, tomato chutney, and piping hot sambar.",
+    category: "breakfast-tacos",
+    price: 180,
+    image: breakfastTacosImg,
+    description: "Two warm soft tortillas stuffed with fluffy scrambled eggs, spiced Mexican chorizo, crispy hash potatoes, cotija cheese, and fresh salsa verde.",
     popular: true
   },
   {
-    id: "tiffin-ghee-podi-idly",
-    name: "Ghee Podi Idly",
+    id: "bfast-bacon-guac-tacos",
+    name: "Bacon & Guacamole Breakfast Tacos (2 pcs)",
     menuType: "tiffins",
-    category: "idly",
-    price: 80,
-    veg: true,
-    image: idlyImage,
-    description: "Mini bite-sized idlies tossed generously in aromatic roasted spiced gunpowder (podi) and hot cow ghee.",
+    category: "breakfast-tacos",
+    price: 195,
+    image: breakfastTacosImg,
+    description: "Crispy applewood smoked bacon, scrambled eggs, fresh Haas guacamole, diced red onions, and cilantro on warm tortillas.",
     popular: true
   },
   {
-    id: "tiffin-sambar-idly",
-    name: "Sambar Idly (2 pcs)",
+    id: "bfast-avocado-blackbean-tacos",
+    name: "Avocado & Black Bean Tacos (Veg)",
     menuType: "tiffins",
-    category: "idly",
-    price: 70,
+    category: "breakfast-tacos",
+    price: 160,
     veg: true,
-    image: idlyImage,
-    description: "Steamed soft idlies fully submerged in our slow-simmered, aromatic spiced vegetable lentil sambar."
+    image: breakfastTacosImg,
+    description: "Seasoned black beans, scrambled farm eggs, fresh avocado slices, sweet roasted corn, and fire-roasted salsa."
   },
 
-  // Dosa
+  // Breakfast Burritos
   {
-    id: "tiffin-plain-dosa",
-    name: "Plain Dosa",
+    id: "bfast-el-grande-burrito",
+    name: "El Grande Breakfast Burrito",
     menuType: "tiffins",
-    category: "dosa",
-    price: 70,
-    veg: true,
-    image: dosaImage,
-    description: "Crispy, golden fermented rice and lentil crepe freshly spun on the griddle, served with chutneys & sambar."
-  },
-  {
-    id: "tiffin-masala-dosa",
-    name: "Masala Dosa",
-    menuType: "tiffins",
-    category: "dosa",
-    price: 95,
-    veg: true,
-    image: dosaImage,
-    description: "Golden crispy dosa folded over our signature turmeric-infused spiced potato and caramelized onion filling.",
-    popular: true
-  },
-  {
-    id: "tiffin-ghee-roast-dosa",
-    name: "Ghee Roast Dosa",
-    menuType: "tiffins",
-    category: "dosa",
-    price: 110,
-    veg: true,
-    image: dosaImage,
-    description: "Extra crispy, paper-thin crepe roasted with generous spoonfuls of pure aromatic desi ghee.",
+    category: "breakfast-burritos",
+    price: 240,
+    image: breakfastBurritoImg,
+    description: "A hearty grilled flour tortilla loaded with scrambled eggs, golden tater tots, melted cheddar jack, refried beans, and chipotle crema.",
+    popular: true,
     signature: true
   },
   {
-    id: "tiffin-onion-rava-dosa",
-    name: "Onion Rava Dosa",
+    id: "bfast-chorizo-potato-burrito",
+    name: "Chorizo & Crispy Potato Burrito",
     menuType: "tiffins",
-    category: "dosa",
-    price: 110,
-    veg: true,
-    image: dosaImage,
-    description: "Lacy, crunchy semolina crepe embedded with finely chopped red onions, fresh green chilies, and cracked peppercorns."
-  },
-  {
-    id: "tiffin-cheese-dosa",
-    name: "Cheese Dosa",
-    menuType: "tiffins",
-    category: "dosa",
-    price: 130,
-    veg: true,
-    image: dosaImage,
-    description: "Freshly seared crispy dosa layered with melted creamy cheddar and mozzarella cheese."
-  },
-
-  // Poori
-  {
-    id: "tiffin-poori-masala",
-    name: "Poori Masala (2 pcs)",
-    menuType: "tiffins",
-    category: "poori",
-    price: 80,
-    veg: true,
-    image: pooriImage,
-    description: "Puffed, golden-fried whole wheat pooris paired with flavorful spiced potato bhaji and coconut chutney.",
-    popular: true
-  },
-
-  // Vada
-  {
-    id: "tiffin-medu-vada",
-    name: "Medu Vada (2 pcs)",
-    menuType: "tiffins",
-    category: "vada",
-    price: 60,
-    veg: true,
-    image: vadaImage,
-    description: "Crispy-crusted, fluffy-hearted savory black gram fritters spiced with peppercorns, curry leaves, and ginger.",
+    category: "breakfast-burritos",
+    price: 230,
+    image: breakfastBurritoImg,
+    description: "Spiced artisan chorizo, skillet roasted potatoes, melted cheese, fluffy eggs, and house pico de gallo rolled in a toasted tortilla.",
     popular: true
   },
   {
-    id: "tiffin-sambar-vada",
-    name: "Sambar Vada (2 pcs)",
+    id: "bfast-veggie-sunrise-burrito",
+    name: "Veggie Sunrise Burrito (Veg)",
     menuType: "tiffins",
-    category: "vada",
-    price: 75,
+    category: "breakfast-burritos",
+    price: 210,
     veg: true,
-    image: vadaImage,
-    description: "Crisp medu vadas soaked in piping hot spicy sambar, garnished with fresh cilantro and finely chopped onions."
+    image: breakfastBurritoImg,
+    description: "Scrambled eggs, sautéed peppers and onions, black beans, Monterey Jack cheese, and creamy avocado salsa verde."
   },
 
-  // Pongal
+  // Breakfast Bowls
   {
-    id: "tiffin-ven-pongal",
-    name: "Ven Pongal",
+    id: "bfast-sunrise-hash-bowl",
+    name: "Sunrise Mexican Breakfast Bowl",
     menuType: "tiffins",
-    category: "pongal",
-    price: 80,
-    veg: true,
-    image: pongalImage,
-    description: "Traditional creamy rice and moong dal comfort dish tempered with golden-fried cashews, cumin, ginger, and pure ghee.",
+    category: "breakfast-bowls",
+    price: 260,
+    image: breakfastBowlImg,
+    description: "Golden roasted breakfast potatoes topped with two sunny-side eggs, black beans, charred corn, avocado slices, and cotija cheese.",
+    popular: true,
+    signature: true
+  },
+  {
+    id: "bfast-carnitas-egg-bowl",
+    name: "Carnitas & Potato Skillet Bowl",
+    menuType: "tiffins",
+    category: "breakfast-bowls",
+    price: 280,
+    image: breakfastBowlImg,
+    description: "Slow-simmered crispy carnitas, breakfast potatoes, fried eggs, pickled jalapeños, and smoky salsa roja drizzle."
+  },
+
+  // Huevos & Eggs
+  {
+    id: "bfast-huevos-rancheros",
+    name: "Authentic Huevos Rancheros",
+    menuType: "tiffins",
+    category: "huevos",
+    price: 220,
+    image: huevosRancherosImg,
+    description: "Two sunny-side fried eggs over lightly crisped corn tortillas, smothered in fire-roasted ranchero salsa, queso fresco, and refried beans.",
+    popular: true,
+    signature: true
+  },
+  {
+    id: "bfast-huevos-mexicana",
+    name: "Huevos a la Mexicana",
+    menuType: "tiffins",
+    category: "huevos",
+    price: 190,
+    image: huevosRancherosImg,
+    description: "Fluffy scrambled eggs sautéed with diced roma tomatoes, serrano peppers, and fresh cilantro, served with refried beans and warm tortillas."
+  },
+
+  // Chilaquiles
+  {
+    id: "bfast-chilaquiles-verdes",
+    name: "Chilaquiles Verdes con Huevo",
+    menuType: "tiffins",
+    category: "chilaquiles",
+    price: 240,
+    image: chilaquilesImg,
+    description: "Crispy housemade corn tortilla chips simmered in tangy tomatillo salsa verde, topped with two fried eggs, Mexican crema, and crumbled cotija.",
+    popular: true,
+    signature: true
+  },
+  {
+    id: "bfast-chilaquiles-rojos",
+    name: "Chilaquiles Rojos con Pollo",
+    menuType: "tiffins",
+    category: "chilaquiles",
+    price: 260,
+    image: chilaquilesImg,
+    description: "Tortilla chips tossed in smoky red guajillo chile salsa, layered with tender shredded chicken, fried egg, cotija cheese, and crema."
+  },
+
+  // Breakfast Quesadillas
+  {
+    id: "bfast-bacon-egg-quesadilla",
+    name: "Toasted Breakfast Quesadilla",
+    menuType: "tiffins",
+    category: "quesadillas",
+    price: 230,
+    image: breakfastQuesadillaImg,
+    description: "Golden grilled flour tortilla folded with molten Oaxaca and Monterey Jack cheeses, scrambled eggs, crispy bacon, and fresh scallions.",
     popular: true
   },
 
-  // Upma
+  // Breakfast Combos
   {
-    id: "tiffin-rava-upma",
-    name: "Rava Upma / Kichadi",
-    menuType: "tiffins",
-    category: "upma",
-    price: 60,
-    veg: true,
-    image: upmaImage,
-    description: "Savory roasted semolina cooked with seasoned mustard seeds, fresh ginger, green chilies, cashews, and garden vegetables."
-  },
-
-  // Combos
-  {
-    id: "tiffin-mini-combo",
-    name: "South Indian Mini Tiffin Combo",
+    id: "bfast-el-patron-combo",
+    name: "El Patrón Breakfast Platter",
     menuType: "tiffins",
     category: "combos",
-    price: 150,
-    veg: true,
-    image: dosaImage,
-    description: "The complete South Indian breakfast feast: 1 Steamed Idly, 1 Crispy Medu Vada, 1 Mini Masala Dosa, and sweet Rava Kesari.",
+    price: 320,
+    image: huevosRancherosImg,
+    description: "The complete Mexican morning feast: 2 sunny eggs, spiced chorizo hash, refried beans, tortilla chips with salsa verde, avocado, and warm tortillas.",
     signature: true,
     popular: true
   }

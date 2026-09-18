@@ -10,19 +10,19 @@ export default function HomeMenuTypeSelector() {
     <section className="section dual-menu-section">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">Two Culinary Worlds</span>
+          <span className="section-tag">Two Culinary Experiences</span>
           <h2 className="section-title">What are you craving?</h2>
           <p className="section-subtitle">
-            From piping hot stone-ground South Indian tiffins to fire-seared Mexican street food, enjoy two authentic dining experiences under one roof.
+            From hearty Mexican breakfast tacos and burritos to our famous all-day street grill, enjoy two delicious dining experiences under one roof.
           </p>
         </div>
 
         <div className="dual-menu-grid">
-          {/* CARD 1: TIFFINS */}
+          {/* CARD 1: MEXICAN BREAKFAST */}
           <div className="dual-menu-card tiffins-card card">
             <div className="dual-card-top">
               <div className="dual-card-icon-wrap tiffin-icon-wrap">
-                <span className="dual-card-icon">🫓</span>
+                <span className="dual-card-icon">🍳</span>
               </div>
               <span className={`dual-status-badge ${tiffinStatus.badgeType}`}>
                 {tiffinStatus.isAvailable ? "● Available Now" : "7–11 AM • 7–11 PM"}
@@ -30,19 +30,18 @@ export default function HomeMenuTypeSelector() {
             </div>
 
             <div className="dual-card-content">
-              <span className="dual-cuisine-tag">South Indian Breakfast &amp; Evening</span>
-              <h3 className="dual-card-title">TIFFINS</h3>
+              <span className="dual-cuisine-tag">Mexican Breakfast &amp; Morning Service</span>
+              <h3 className="dual-card-title">BREAKFAST / TIFFINS</h3>
               <p className="dual-card-desc">
-                Traditional South Indian breakfast crafted from slow-fermented batters and fresh stone-ground chutneys.
+                Hearty Mexican morning classics crafted with scrambled eggs, breakfast tacos, loaded burritos, skillet bowls, and roasted salsas.
               </p>
 
               <div className="dual-items-pill-row">
-                <span className="food-chip">Idly</span>
-                <span className="food-chip">Dosa</span>
-                <span className="food-chip">Poori</span>
-                <span className="food-chip">Vada</span>
-                <span className="food-chip">Pongal</span>
-                <span className="food-chip">Upma</span>
+                <span className="food-chip">Breakfast Tacos</span>
+                <span className="food-chip">Burritos</span>
+                <span className="food-chip">Skillet Bowls</span>
+                <span className="food-chip">Huevos Rancheros</span>
+                <span className="food-chip">Chilaquiles</span>
               </div>
 
               <div className="dual-timing-box">
@@ -56,7 +55,7 @@ export default function HomeMenuTypeSelector() {
 
             <div className="dual-card-action">
               <Link to="/menu?type=tiffins" className="btn btn-secondary w-full">
-                <span>Explore Tiffins</span>
+                <span>Explore Breakfast</span>
                 <HiArrowRight />
               </Link>
             </div>

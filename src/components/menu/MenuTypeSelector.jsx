@@ -41,9 +41,9 @@ export default function MenuTypeSelector() {
             className={`menu-type-tab ${currentType === 'tiffins' ? 'active' : ''}`}
             onClick={() => handleSelectType('tiffins')}
           >
-            <span className="tab-icon">🫓</span>
+            <span className="tab-icon">🍳</span>
             <div className="tab-text-wrap">
-              <span className="tab-title">Tiffins / Breakfast</span>
+              <span className="tab-title">Breakfast / Tiffins</span>
               <span className={`tab-badge ${tiffinStatus.badgeType}`}>
                 {tiffinStatus.isAvailable ? '● Available Now' : '7–11 AM • 7–11 PM'}
               </span>

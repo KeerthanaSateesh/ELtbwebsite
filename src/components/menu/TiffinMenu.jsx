@@ -28,16 +28,16 @@ export default function TiffinMenu() {
         </div>
       </div>
 
-      {/* Tiffins Intro Header */}
+      {/* Breakfast Intro Header */}
       <div className="section-header tiffin-section-header">
-        <span className="section-tag secondary">Fresh From The Griddle &amp; Steamer</span>
-        <h2 className="section-title">South Indian Breakfast &amp; Tiffins</h2>
+        <span className="section-tag secondary">Fresh From The Skillet &amp; Griddle</span>
+        <h2 className="section-title">Mexican Breakfast &amp; Morning Specialties</h2>
         <p className="section-subtitle">
-          Every item is prepared fresh to order with authentic stone-ground chutneys, piping hot drumstick sambar, and pure cow ghee.
+          Every item is prepared fresh to order with warm tortillas, farm-fresh eggs, seasoned black beans, melted cheeses, and fire-roasted salsas.
         </p>
       </div>
 
-      {/* Tiffin Items Responsive Grid */}
+      {/* Breakfast Items Responsive Grid */}
       <div className="tiffin-items-grid">
         {filteredItems.map((item) => (
           <TiffinItemCard key={item.id} item={item} />

@@ -1,0 +1,344 @@
+/* ===================================================
+   EL Tacos & Burritos — Admin Notification Bell & Panel
+   Warm, clean restaurant dashboard aesthetic
+=================================================== */
+
+.admin-notification-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------------------------------------------------
+   Notification Bell Trigger Button
+--------------------------------------------------- */
+.admin-bell-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: #FAFAF8;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.admin-bell-btn:hover,
+.admin-bell-btn.active {
+  background-color: #F5EFE3;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.admin-bell-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Bell Wiggle Animation */
+@keyframes bellWiggle {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-14deg); }
+  45% { transform: rotate(10deg); }
+  60% { transform: rotate(-10deg); }
+  75% { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.admin-bell-animating {
+  animation: bellWiggle 0.85s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform-origin: top center;
+  color: var(--color-primary) !important;
+}
+
+/* ---------------------------------------------------
+   Unread Badge
+--------------------------------------------------- */
+.admin-bell-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 4px;
+  border-radius: 9999px;
+  background-color: #D32F2F;
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(211, 47, 47, 0.45);
+  pointer-events: none;
+  border: 2px solid #FFFFFF;
+}
+
+/* ---------------------------------------------------
+   Notification Dropdown Panel
+--------------------------------------------------- */
+.admin-notification-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 340px;
+  max-width: calc(100vw - 2rem);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 32px rgba(43, 24, 16, 0.12), 0 4px 12px rgba(43, 24, 16, 0.06);
+  z-index: 1000;
+  overflow: hidden;
+  animation: panelFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Panel Header */
+.admin-notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.15rem;
+  background-color: #FAF5ED;
+  border-bottom: 1px solid #EAE5D9;
+}
+
+.admin-notification-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-notification-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1B2E24;
+  margin: 0;
+}
+
+.admin-notification-unread-pill {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+  border: 1px solid rgba(217, 72, 15, 0.2);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.admin-notification-read-all-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.admin-notification-read-all-btn:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-hover);
+}
+
+/* Notification List */
+.admin-notification-list {
+  max-height: 350px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-notification-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.admin-notification-list::-webkit-scrollbar-thumb {
+  background-color: #D8D2C4;
+  border-radius: 4px;
+}
+
+/* Individual Notification Item */
+.admin-notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid #F3EDE3;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-family: inherit;
+}
+
+.admin-notification-item:last-child {
+  border-bottom: none;
+}
+
+.admin-notification-item.unread {
+  background-color: #FFFDF9;
+}
+
+.admin-notification-item.read {
+  background-color: #FFFFFF;
+  opacity: 0.85;
+}
+
+.admin-notification-item:hover {
+  background-color: #F8F4EC;
+  opacity: 1;
+}
+
+/* Dot Indicator */
+.admin-notification-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+.admin-notification-dot.unread {
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(217, 72, 15, 0.2);
+}
+
+.admin-notification-dot.read {
+  background-color: #D8D2C4;
+}
+
+/* Content */
+.admin-notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-notification-item-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.admin-notification-item-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1B2E24;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-notification-item-time {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.admin-notification-item-msg {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.35rem 0;
+  line-height: 1.35;
+}
+
+.admin-notification-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-notification-item-amount {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+}
+
+/* Empty State */
+.admin-notification-empty {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-notification-empty-icon {
+  font-size: 2.2rem;
+  color: #C5BCAC;
+  margin-bottom: 0.6rem;
+}
+
+.admin-notification-empty-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #4A352B;
+  margin: 0 0 0.25rem 0;
+}
+
+.admin-notification-empty-subtext {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Panel Footer */
+.admin-notification-footer {
+  padding: 0.75rem 1.15rem;
+  background-color: #FAF5ED;
+  border-top: 1px solid #EAE5D9;
+  text-align: center;
+}
+
+.admin-notification-view-all {
+  color: var(--color-primary);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.admin-notification-view-all:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------
+   Mobile & Responsive Adjustments
+--------------------------------------------------- */
+@media (max-width: 540px) {
+  .admin-notification-panel {
+    width: 300px;
+    right: -40px; /* Aligns comfortably with mobile topbar right edge */
+  }
+}

@@ -43,6 +43,16 @@ export const api = {
     login: (credentials) => request('/auth/login', { method: 'POST', body: JSON.stringify(credentials) }),
     register: (userData) => request('/auth/register', { method: 'POST', body: JSON.stringify(userData) }),
     getCurrentUser: () => request('/auth/me'),
+    sendRegistrationOtp: (phoneNumber) =>
+      request('/auth/register/send-otp', {
+        method: 'POST',
+        body: JSON.stringify({ phoneNumber }),
+      }),
+    verifyRegistrationOtp: (phoneNumber, otp) =>
+      request('/auth/register/verify-otp', {
+        method: 'POST',
+        body: JSON.stringify({ phoneNumber, otp }),
+      }),
   },
 
   // Menu endpoints
@@ -61,5 +71,10 @@ export const api = {
     getUserOrders: () => request('/orders/user'),
   },
 };
+
+export const sendRegistrationOtp = (phoneNumber) => api.auth.sendRegistrationOtp(phoneNumber);
+export const verifyRegistrationOtp = (phoneNumber, otp) => api.auth.verifyRegistrationOtp(phoneNumber, otp);
+export const registerCustomer = (userData) => api.auth.register(userData);
+export const loginCustomer = (identifier, password) => api.auth.login({ identifier, password });
 
 export default api;

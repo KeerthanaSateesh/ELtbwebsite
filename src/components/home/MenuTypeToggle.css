@@ -72,7 +72,7 @@
   line-height: 1;
 }
 
-.toggle-poori-thumbnail {
+.toggle-breakfast-thumbnail {
   width: 24px;
   height: 24px;
   border-radius: var(--radius-full);
@@ -134,7 +134,7 @@
     padding: 0.45rem 0.5rem;
   }
 
-  .toggle-poori-thumbnail {
+  .toggle-breakfast-thumbnail {
     width: 20px;
     height: 20px;
   }

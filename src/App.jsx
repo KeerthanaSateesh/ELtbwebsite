@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
+import CustomerLayout from './components/common/CustomerLayout';
+import AdminLayout from './components/admin/AdminLayout';
 
 // Customer Pages
 import Home from './pages/Home';
@@ -18,15 +18,17 @@ import Register from './pages/Register';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminMenuManagement from './pages/admin/AdminMenuManagement';
+import AdminOrders from './pages/admin/AdminOrders';
+import AdminPurchaseHistory from './pages/admin/AdminPurchaseHistory';
+import AdminReports from './pages/admin/AdminReports';
 
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Header />
-      <main className="main-content">
-        <Routes>
-          {/* Customer Facing Routes */}
+      <Routes>
+        {/* Customer Facing Routes (Rendered inside public CustomerLayout with Header & Footer) */}
+        <Route element={<CustomerLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/about" element={<About />} />
@@ -35,17 +37,23 @@ export default function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
-          {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/menu" element={<AdminMenuManagement />} />
+        </Route>
 
-          {/* 404 Fallback Route */}
+        {/* Admin Protected Management Portal (ONE Layout + ONE Persistent Sidebar + 5 Sections) */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="menu" element={<AdminMenuManagement />} />
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="purchase-history" element={<AdminPurchaseHistory />} />
+          <Route path="reports" element={<AdminReports />} />
+        </Route>
+
+        {/* 404 Fallback Route */}
+        <Route path="*" element={<CustomerLayout />}>
           <Route path="*" element={<Home />} />
-        </Routes>
-      </main>
-      <Footer />
+        </Route>
+      </Routes>
     </Router>
   );
 }

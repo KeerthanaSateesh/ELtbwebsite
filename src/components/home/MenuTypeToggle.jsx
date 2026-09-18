@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import pooriImage from '../../assets/images/food/poori.jpg';
+import breakfastThumb from '../../assets/images/food/mex_breakfast_tacos.jpg';
 import './MenuTypeToggle.css';
 
 export default function MenuTypeToggle() {
@@ -13,7 +13,7 @@ export default function MenuTypeToggle() {
       // Remain on Home page without navigating away
     } else if (type === 'tiffins') {
       setSelectedType('tiffins');
-      // Navigate immediately to the Tiffins menu
+      // Navigate immediately to the Breakfast menu
       navigate('/menu?type=tiffins');
     }
   };
@@ -35,7 +35,7 @@ export default function MenuTypeToggle() {
             <span className="segmented-text">Tacos &amp; Burritos</span>
           </button>
 
-          {/* Right: Tiffins / Breakfast with Poori image */}
+          {/* Right: Breakfast / Tiffins with Mexican Breakfast thumbnail */}
           <button
             type="button"
             className={`segmented-btn ${selectedType === 'tiffins' ? 'active' : ''}`}
@@ -43,11 +43,11 @@ export default function MenuTypeToggle() {
             aria-pressed={selectedType === 'tiffins'}
           >
             <img
-              src={pooriImage}
-              alt="Crispy golden Poori"
-              className="toggle-poori-thumbnail"
+              src={breakfastThumb}
+              alt="Mexican Breakfast Tacos"
+              className="toggle-breakfast-thumbnail"
             />
-            <span className="segmented-text">Tiffins / Breakfast</span>
+            <span className="segmented-text">Breakfast / Tiffins</span>
             <span className="segmented-sub-badge">7–11 AM &bull; 7–11 PM</span>
           </button>
         </div>
